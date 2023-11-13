@@ -46,6 +46,10 @@ class Front
             'subscribe_text'    => __('Subscribe', 'wp-sms'),
             'activation_text'   => __('Activate', 'wp-sms'),
         ));
+
+        // Register contact form 7 front script
+        wp_register_script('wp-sms-contact-form-script', WP_SMS_URL . 'assets/js/contact-form-7-otp.js', ['jquery'], WP_SMS_VERSION, true);
+        wp_enqueue_script('wp-sms-contact-form-script');
     }
 
     /**

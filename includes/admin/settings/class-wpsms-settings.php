@@ -1860,20 +1860,39 @@ class Settings
              * Contact form 7 fields
              */
             'contact_form7'        => apply_filters('wp_sms_contact_form7_settings', array(
-                'cf7_title'   => array(
-                    'id'   => 'cf7_title',
+                'cf7_metabox_title'         => array(
+                    'id'   => 'cf7_metabox_title',
                     'name' => __('SMS Notification Metabox', 'wp-sms'),
                     'type' => 'header',
                     'doc'  => '/resources/integrate-wp-sms-with-contact-form-7/',
                     'desc' => __('By this option you can add SMS notification tools in all edit forms.', 'wp-sms'),
                 ),
-                'cf7_metabox' => array(
+                'cf7_metabox'               => array(
                     'id'      => 'cf7_metabox',
                     'name'    => __('Status', 'wp-sms'),
                     'type'    => 'checkbox',
                     'options' => $options,
                     'desc'    => __('This option adds SMS Notification tab in the edit forms.', 'wp-sms')
                 ),
+                'cf7_otp_title'             => array(
+                    'id'   => 'cf7_otp_title',
+                    'name' => __('Mobile Verification', 'wp-sms'),
+                    'type' => 'header'
+                ),
+                'cf7_mobile_verify'         => array(
+                    'id'      => 'cf7_mobile_verify',
+                    'name'    => __('Status', 'wp-sms'),
+                    'type'    => 'checkbox',
+                    'options' => $options,
+                    'desc'    => __('Verify mobile number in for submitting the form.<br>Use <code>[tel* wpsms-verify-mobile]</code> field in your form.', 'wp-sms'),
+                ),
+                'cf7_mobile_verify_message' => array(
+                    'id'   => 'cf7_mobile_verify_message',
+                    'name' => __('Message content', 'wp-sms'),
+                    'type' => 'textarea',
+                    'desc' => __('Enter the contents of the verification SMS message.', 'wp-sms') . '<br>' .
+                        sprintf(__('Mobile code: %s', 'wp-sms'), '<code>%otp%</code>')
+                )
             )),
 
             /*

@@ -20,7 +20,26 @@ class Integrations
             add_filter('wpcf7_editor_panels', array($this, 'cf7_editor_panels'));
             add_action('wpcf7_after_save', array($this, 'wpcf7_save_form'));
             add_action('wpcf7_before_send_mail', array($this, 'wpcf7_sms_handler'));
+            add_filter('wpcf7_messages', array($this, 'wpcf7_sms_verification_message'));
+            add_action('wpcf7_before_send_mail', array($this, 'wpcf7_sms_verification'), 12, 3);
         }
+    }
+
+    public function wpcf7_sms_verification($form, &$abort, $obj)
+    {
+        $abort = true;
+    }
+
+    public function wpcf7_sms_verification_message($messages)
+    {
+        $messages = array_merge($messages, array(
+            'mobile_not_verified' => array(
+                'description' => __("You must verify your mobile number", 'wp-sms'),
+                'default'     => __("Please verify your mobile number.", 'wp-sms'),
+            )
+        ));
+
+        return $messages;
     }
 
     public function cf7_editor_panels($panels)
