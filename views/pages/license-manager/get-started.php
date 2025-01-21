@@ -1,8 +1,8 @@
 <?php
 
-use WP_Statistics\Components\View;
-use WP_STATISTICS\Menus;
-use WP_Statistics\Service\Admin\LicenseManagement\Plugin\PluginDecorator;
+use WP_SMS\Admin\LicenseManagement\Plugin\PluginDecorator;
+use WP_SMS\Components\View;
+use WP_SMS\Utils\MenuUtil;
 ?>
 <div class="wps-wrap__main">
     <div class="wp-header-end"></div>
@@ -44,7 +44,7 @@ use WP_Statistics\Service\Admin\LicenseManagement\Plugin\PluginDecorator;
                 </div>
                 <div class="wps-review_premium__actions">
                     <a href="https://wordpress.org/support/plugin/wp-statistics/reviews/?filter=5#new-post" target="_blank" class="wps-review_premium__actions__review-btn"><?php esc_html_e('Write a Review', 'wp-statistics'); ?></a>
-                    <a href="<?php echo esc_url(Menus::admin_url('overview')); ?>" class="wps-review_premium__actions__overview-btn"><?php esc_html_e('No, Take me to the Overview', 'wp-statistics'); ?></a>
+                    <a href="<?php echo esc_url(MenuUtil::getAdminUrl('overview')); ?>" class="wps-review_premium__actions__overview-btn"><?php esc_html_e('No, Take me to the Overview', 'wp-statistics'); ?></a>
                 </div>
             </div>
         </div>

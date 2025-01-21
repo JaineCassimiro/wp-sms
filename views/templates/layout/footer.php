@@ -1,5 +1,5 @@
 <div class="wps-adminFooter">
-    <?php if (apply_filters('wp_statistics_enable_footer_logo', true)) { ?>
+    <?php if (apply_filters('wp_sms_enable_footer_logo', true)) { ?>
         <a href="https://veronalabs.com/?utm_source=wp-statistics&utm_medium=link&utm_campaign=footer-logo" target="_blank">
             <svg class="wps-adminFooter__logo" width="130" height="22" viewBox="0 0 130 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M32.4671 17.5677L27.9355 3.36704H30.4717L33.8564 14.5653L37.241 3.36704H39.7399L35.2177 17.5677H32.4671Z"/>
