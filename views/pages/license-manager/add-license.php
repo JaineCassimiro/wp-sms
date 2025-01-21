@@ -13,7 +13,7 @@
                 <input type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
                 <button class="wps-postbox-addon-button js-addon-active-license disabled"><?php esc_html_e('Activate License', 'wp-statistics'); ?></button>
             </div>
-         </div>
+        </div>
         <div class="wps-addon__step__faq">
             <ul>
                 <li>

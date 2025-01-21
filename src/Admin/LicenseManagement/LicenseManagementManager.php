@@ -32,7 +32,7 @@ class LicenseManagementManager
         $items['plugins'] = [
             'sub'      => 'send-sms',
             'title'    => __('Add-Ons', 'wp-sms'),
-            'name'     => '<span class="wps-text-warning">' . __('Add-Onssss', 'wp-sms') . '</span>',
+            'name'     => '<span class="wps-text-warning">' . __('Add-Ons', 'wp-sms') . '</span>',
             'page_url' => 'add-ons-1',
             'callback' => LicenseManagerPage::class,
             'cap'      => WP_SMS\User\UserHelper::validateCapability(WP_SMS\Utils\OptionUtil::get('manage_capability', 'manage_options')),
@@ -96,6 +96,7 @@ class LicenseManagementManager
             $this->handledPlugins[] = $pluginSlug;
 
         } catch (Exception $e) {
+            //todo
             WP_SMS::log(sprintf('Failed to initialize PluginUpdater for %s: %s', $pluginSlug, $e->getMessage()));
         }
     }
